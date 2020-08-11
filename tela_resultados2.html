@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Consulta de Resultados</title>
+    </head>
+    <body>
+        <fieldset>
+        <legend>Consultar Resultados</legend>
+        <form method="POST" action="/cgi-bin/P16SISC20.exe">
+        <br>
+        <label for="id-userId">ID do funcionário:</label><br>
+        <input type="text" id="id-userId" name="f-id-user" value="%%f-id-user2%%" maxlength="8"><br><br>
+        <label for="id-disciplinaId">ID da disciplina:</label><br>
+        <input type="text" id="id-disciplinaId" name="f-id-disciplina" maxlength="3"><br><br>
+        <!-- <input type="text" name="f-escolha" id="fOpcaoBuscarUm" value="%%f-escolha2%%"> -->
+        <br>
+        <br>
+        <button type="submit" id="id-bt-salvar" name="f-op-salvar" value="SA">Salvar</button>
+        <button type="submit" id="id-bt-deletar" name="f-op-deletar" value="DE">Deletar</button>
+        <button type="submit" id="id-bt-buscar-um" name="f-op-buscar-um" value="BU">Buscar um</button>
+        <button type="submit" id="id-bt-buscar-todos" name="f-op-buscar-todos" value="BT">Buscar todos</button>
+        </form>
+        </fieldset>
+    </body>
+</html>
