@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Consulta de Resultados</title>
-    </head>
-    <body>
-        <fieldset>
-        <legend>Consultar Resultados</legend>
-        <form method="POST" action="/cgi-bin/P16SISC20.exe">
-        <br>
-        <label for="id-userId">ID do funcionário:</label><br>
-        <input type="text" id="id-userId" name="f-id-user" maxlength="8"><br><br>
-        <label for="id-disciplinaId">ID da disciplina:</label><br>
-        <input type="text" id="id-disciplinaId" name="f-id-disciplina" maxlength="3"><br><br>
-        <!--
-        <input type="radio" name="f-escolha" id="fOpcaoBuscarUm" value="BU">
-        <label for="fOpcaoBuscarUm">Buscar um resultado</label><br>
-        <input type="radio" name="f-escolha" id="fOpcaoBuscarVarios" value="BV">
-        <label for="fOpcaoBuscarVarios">Buscar vários resultados</label><br>
-        <input type="radio" name="f-escolha" id="fOpcaoBuscarTodos" value="BT">
-        <label for="fOpcaoBuscarTodos">Buscar todos os resultados</label><br>
-        <input type="radio" name="f-escolha" id="fOpcaoSalvar" value="SA">
-        <label for="fOpcaoSalvar">Salvar um resultado</label><br>
-        <input type="radio" name="f-escolha" id="fOpcaoDeletar" value="DE">
-        <label for="fOpcaoDeletar">Deletar um resultado</label><br> -->
-        
+<HTML lang="en">
+   <HEAD>
+      <META charset="UTF-8">
+      <META name="viewport" content="width=device-width, initial-scale=1.0">
+      <TITLE>Consulta de Resultados</TITLE>
+   </HEAD>
+   <BODY>
+      <LEGEND>Consultar Resultados</LEGEND>
+      <FORM id="id-form-resul" method="POST" action="/cgi-bin/P16SISC20.exe">
+         <BR>
+         <FIELDSET>
+            <LABEL for="id-resulId">ID do resultado:</LABEL><BR>
+            <INPUT type="text"   id="id-resulId"      name="f-id-resul"      maxlength="2"><BR><BR>
 
-        <button type="submit" id="id-bt-salvar" name="f-op-salvar" value="SA">Salvar</button>
-        <button type="submit" id="id-bt-deletar" name="f-op-deletar" value="DE">Deletar</button>
-        <button type="submit" id="id-bt-buscar-um" name="f-op-buscar-um" value="BU">Buscar um</button>
-        <button type="submit" id="id-bt-buscar-todos" name="f-op-buscar-todos" value="BT">Buscar todos</button>
-        </form>
-        </fieldset>
-    </body>
-</html>
+            <LABEL for="id-userId">ID do funcionário:</LABEL><BR>
+            <INPUT type="text"   id="id-userId"       name="f-id-user"       maxlength="8"><BR><BR>
+
+            <LABEL for="id-disciplinaId">ID da disciplina:</LABEL><BR>
+            <INPUT type="number" id="id-disciplinaId" name="f-id-disciplina" maxlength="3"><BR><BR>
+
+            <LABEL for="id-nota">Nota:</LABEL><BR>
+            <INPUT type="text"   id="id-nota"         name="f-nota"          maxlength="5"><BR><BR>
+
+            <LABEL for="id-data">Data da Prova:</LABEL><BR>
+            <INPUT type="text"   id="id-data"         name="f-data"          maxlength="10"><BR><BR>
+         </FIELDSET>
+
+         <BR>
+         <BUTTON type="submit" id="id-bt-salvar"    name="f-op-salvar"    value="SA">Salvar</button>
+         <BUTTON type="submit" id="id-bt-deletar"   name="f-op-deletar"   value="DE">Deletar</button>
+         <BUTTON type="submit" id="id-bt-consultar" name="f-op-consultar" value="CO">Consultar</button>
+         <INPUT  type="reset"  id="id-bt-reset"                           value="Cancelar">
+      </FORM>
+
+   </BODY>
+</HTML>

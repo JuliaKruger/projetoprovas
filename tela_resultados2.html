@@ -1,27 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Consulta de Resultados</title>
-    </head>
-    <body>
-        <fieldset>
-        <legend>Consultar Resultados</legend>
-        <form method="POST" action="/cgi-bin/P16SISC20.exe">
-        <br>
-        <label for="id-userId">ID do funcionário:</label><br>
-        <input type="text" id="id-userId" name="f-id-user" value="%%f-id-user2%%" maxlength="8"><br><br>
-        <label for="id-disciplinaId">ID da disciplina:</label><br>
-        <input type="text" id="id-disciplinaId" name="f-id-disciplina" maxlength="3"><br><br>
-        <!-- <input type="text" name="f-escolha" id="fOpcaoBuscarUm" value="%%f-escolha2%%"> -->
-        <br>
-        <br>
-        <button type="submit" id="id-bt-salvar" name="f-op-salvar" value="SA">Salvar</button>
-        <button type="submit" id="id-bt-deletar" name="f-op-deletar" value="DE">Deletar</button>
-        <button type="submit" id="id-bt-buscar-um" name="f-op-buscar-um" value="BU">Buscar um</button>
-        <button type="submit" id="id-bt-buscar-todos" name="f-op-buscar-todos" value="BT">Buscar todos</button>
-        </form>
-        </fieldset>
-    </body>
-</html>
+<HTML lang="en">
+   <HEAD>
+      <META charset="UTF-8">
+      <META name="viewport" content="width=device-width, initial-scale=1.0">
+      <TITLE>Consulta de Resultados</TITLE>
+   </HEAD>
+   <BODY>
+      <LEGEND>Consultar Resultados</LEGEND>
+      <FORM id="id-form-resul" method="POST" action="/cgi-bin/P16SISC20.exe">
+         <FIELDSET>
+            <BR>
+            <LABEL for="id-resulId">ID do resultado:</LABEL><BR>
+            <INPUT type="text" id="id-resulId"      name="f-id-resul"      value="%%f-id-resul%%"      maxlength="2"><BR><BR>
+
+            <LABEL for="id-userId">ID do funcionário:</LABEL><BR>
+            <INPUT type="text" id="id-userId"       name="f-id-user"       value="%%f-id-user%%"       maxlength="8"><BR><BR>
+
+            <LABEL for="id-disciplinaId">ID da disciplina:</LABEL><BR>
+            <INPUT type="text" id="id-disciplinaId" name="f-id-disciplina" value="%%f-id-disciplina%%" maxlength="3"><BR><BR>
+
+            <LABEL for="id-nota">Nota:</LABEL><BR>
+            <INPUT type="text" id="id-nota"         name="f-nota"          value="%%f-nota%%"          maxlength="5"><BR><BR>
+
+            <LABEL for="id-data">Data da Prova:</LABEL><BR>
+            <INPUT type="text" id="id-data"         name="f-data"          value="%%f-data%%"          maxlength="10"><BR><BR>
+
+         </FIELDSET>
+
+         <BR>
+         <BUTTON type="submit" id="id-bt-salvar"    name="f-op-salvar"    value="SA">Salvar</BUTTON>
+         <BUTTON type="submit" id="id-bt-deletar"   name="f-op-deletar"   value="DE">Deletar</BUTTON>
+         <BUTTON type="submit" id="id-bt-consultar" name="f-op-consultar" value="CO">Consultar</BUTTON>
+         <INPUT  type="reset"  id="id-bt-reset"                           value="Cancelar">
+
+         <INPUT type="hidden" id="id-hd-confirma" name="f-hd-confirma" value= "%%f-hd-confirma%%">
+         <INPUT type="hidden" id="id-hd-msn"      name="f-hd-msn"      value= "%%f-hd-msn%%">
+         <INPUT type="hidden" id="id-hd-operacao" name="f-hd-operacao" value= "%%f-hd-operacao%%">
+         <INPUT type="hidden" id="id-hd-msn-erro" name="f-hd-msn-erro" value= "%%f-hd-msn-erro%%">                    
+      </FORM>
+
+      <SCRIPT>
+          var hdMsn = document.querySelector("#id-hd-msn");
+          var hdConfirma = document.querySelector("#id-hd-confirma");
+          var hdMsnErro = document.querySelector("#id-hd-msn-erro")
+
+          if( hdConfirma.value == "?     " ){
+              hdConfirma.value = window.confirm(hdMsn.value);
+              document.getElementById("id-form-resul").submit();
+          }
+
+          if( hdMsnErro.value != "                                                  " ){
+              alert(hdMsnErro.value)
+          }
+      </SCRIPT>
+
+   </BODY>
+</HTML>
