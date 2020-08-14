@@ -240,12 +240,12 @@
                      and  fl-user-disc = lnk-user-disc then         *> ... e as variáveis da chave do arquivo forem iguais às variáveis da linkage section
                           move fl-resultado        to lnk-resultado *> movendo o registro do arquivo para as variáveis da linkage section
                      else
-                          if   ws-fs-arq-resultados <> 10   *> file status 10: fim do arquivo
-                               move "P06SISC20"             to lnk-msn-erro-pmg
-                               move 9                       to lnk-msn-erro-offset
-                               move 12                      to lnk-return-code
-                               move "Erro ao ler registro"  to lnk-msn-erro-text
-                               move ws-fs-arq-resultados    to lnk-msn-erro-cod
+                          if   ws-fs-arq-resultados <> "10" then    *> file status 10: fim do arquivo
+                               move "P06SISC20"                     to lnk-msn-erro-pmg
+                               move 9                               to lnk-msn-erro-offset
+                               move 12                              to lnk-return-code
+                               move "Erro ao ler registro"          to lnk-msn-erro-text
+                               move ws-fs-arq-resultados            to lnk-msn-erro-cod
                                perform 9000-finaliza-anormal
                           end-if
                      end-if
@@ -282,7 +282,7 @@
                      *> movendo o registro do arquivo para as variáveis da linkage section
                      move fl-resultado                    to lnk-resultado
                 else
-                     if   ws-fs-arq-resultados = "10"
+                     if   ws-fs-arq-resultados = "10" then
                           move "P06SISC20"                to lnk-msn-erro-pmg
                           move 12                         to lnk-msn-erro-offset
                           move 04                         to lnk-return-code
